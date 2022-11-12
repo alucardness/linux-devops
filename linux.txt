@@ -1,4 +1,3 @@
-          GNU nano 6.2                                          linux.txt                                                   
 #Commands
         pwd - shows current working directory
         mkdir - create directory
