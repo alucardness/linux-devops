@@ -1,0 +1,60 @@
+          GNU nano 6.2                                          linux.txt                                                   
+#Commands
+        pwd - shows current working directory
+        mkdir - create directory
+        touch [filename] - creates a file
+        rm [filename] - removes a file
+        rm -r [folder_name] - removes a folder (recursively)
+        mv [file_name | folder] [path] - moves a file or folder (-r optional)
+        cp [file_name | folder] [path] - copies a file or folder
+        man [command_name] - displays info for a specific command
+        history
+        cat - display file contents
+        groups - displays current user's groups
+        exit - exits current user and logs back to the original one
+
+#OS     
+        uname -a - shows info for os/kerne
+        cat /etc/os-release - shows os info
+        lscpu - cpu info
+        lsmem - memory info
+        cat /etc/passwd - displays all user info(username:pass:uid:gid:gecos:homedir:shell)
+        cat /etc/group - lists all groups
+
+#Super User Commands
+        passwd [user_name] - change user's password
+        adduser [user_name] - adds a user
+        userdel [user_name] - removes a user (-r removes home directory)
+        su [user_name] - switch user
+        groupadd [name] - adds a group
+        groupdel [name] - deletes a group
+        usermod -g [group_name] [user_name] - append user to a group
+        gpasswd -d [user_name] [group_name] - removing user from the group
+
+        #permissions
+                chown [user_name] [file_name] - change owner
+                chmod 774 [file_name] - change permissions for file                      
+                chmod 774 * - change all files in current directory to be readable for all other users          
+
+                Asbsolute mode:
+                        0 ---
+                        1 --x
+                        2 -w-
+                        3 -wx
+                        4 r--
+                        5 r-x
+                        6 rw-
+                        7 rwx
+
+#VIM
+        :wq - save file contents
+        :q! - quits without saving
+        dd - deletes a whole line
+        d10 - deletes 10 lines
+        u - undo
+        A - shifts to the end of the line and entering in INSERT mode
+        0 - jumps to the beginning of the line
+        $ - jumps to the end of the line
+        12G - jumpst to 12 line 
+        /[pattern] - searches for text in the file
+        :%s/[searching_for]/[replace_with] - search and replace in all places
