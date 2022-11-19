@@ -1,59 +1,114 @@
 #Commands
-        pwd - shows current working directory
-        mkdir - create directory
-        touch [filename] - creates a file
-        rm [filename] - removes a file
-        rm -r [folder_name] - removes a folder (recursively)
-        mv [file_name | folder] [path] - moves a file or folder (-r optional)
-        cp [file_name | folder] [path] - copies a file or folder
-        man [command_name] - displays info for a specific command
-        history
-        cat - display file contents
-        groups - displays current user's groups
-        exit - exits current user and logs back to the original one
+	pwd - shows current working directory
+	mkdir - create directory
+	touch [filename] - creates a file
+	rm [filename] - removes a file
+	rm -r [folder_name] - removes a folder (recursively)
+	mv [file_name | folder] [path] - moves a file or folder (-r optional)
+	cp [file_name | folder] [path] - copies a file or folder
+	man [command_name] - displays info for a specific command
+	history
+	cat - display file contents
+	groups - displays current user's groups
+	exit - exits current user and logs back to the original one
+	[command][params] | [another_command] - "|" symbol for pipe, passing the output to another program's input
+	[command][params] > [another_command] - ">" stands for redirecting program's output as redirect
+	[command]; [command]; etc... - run programs after each other, separating them by ";"	
 
-#OS     
-        uname -a - shows info for os/kerne
-        cat /etc/os-release - shows os info
-        lscpu - cpu info
-        lsmem - memory info
-        cat /etc/passwd - displays all user info(username:pass:uid:gid:gecos:homedir:shell)
-        cat /etc/group - lists all groups
+#OS	
+	uname -a - shows info for os/kerne
+	cat /etc/os-release - shows os info
+	lscpu - cpu info
+	lsmem - memory info
+	cat /etc/passwd - displays all user info(username:pass:uid:gid:gecos:homedir:shell)
+	cat /etc/group - lists all groups
 
 #Super User Commands
-        passwd [user_name] - change user's password
-        adduser [user_name] - adds a user
-        userdel [user_name] - removes a user (-r removes home directory)
-        su [user_name] - switch user
-        groupadd [name] - adds a group
-        groupdel [name] - deletes a group
-        usermod -g [group_name] [user_name] - append user to a group
-        gpasswd -d [user_name] [group_name] - removing user from the group
+	passwd [user_name] - change user's password
+	adduser [user_name] - adds a user
+	userdel [user_name] - removes a user (-r removes home directory)
+	su [user_name] - switch user
+	groupadd [name] - adds a group
+	groupdel [name] - deletes a group
+	usermod -g [group_name] [user_name] - append user to a group
+	gpasswd -d [user_name] [group_name] - removing user from the group
 
-        #permissions
-                chown [user_name] [file_name] - change owner
-                chmod 774 [file_name] - change permissions for file                      
-                chmod 774 * - change all files in current directory to be readable for all other users          
+	#permissions
+		chown [user_name] [file_name] - change owner
+		chmod 774 [file_name] - change permissions for file
+		chmod 774 * - change all files in current directory to be readable for all other users		
 
-                Asbsolute mode:
-                        0 ---
-                        1 --x
-                        2 -w-
-                        3 -wx
-                        4 r--
-                        5 r-x
-                        6 rw-
-                        7 rwx
-
+		Asbsolute mode:
+			0 ---
+			1 --x
+			2 -w-
+			3 -wx
+			4 r--
+			5 r-x
+			6 rw-
+			7 rwx
+	
 #VIM
-        :wq - save file contents
-        :q! - quits without saving
-        dd - deletes a whole line
-        d10 - deletes 10 lines
-        u - undo
-        A - shifts to the end of the line and entering in INSERT mode
-        0 - jumps to the beginning of the line
-        $ - jumps to the end of the line
-        12G - jumpst to 12 line 
-        /[pattern] - searches for text in the file
-        :%s/[searching_for]/[replace_with] - search and replace in all places
+	:wq - save file contents
+	:q! - quits without saving
+	dd - deletes a whole line
+	d10 - deletes 10 lines
+	u - undo
+	A - shifts to the end of the line and entering in INSERT mode
+	0 - jumps to the beginning of the line
+	$ - jumps to the end of the line
+	12G - jumpst to 12 line	
+	/[pattern] - searches for text in the file
+	:%s/[searching_for]/[replace_with] - search and replace in all places
+	
+#BASH
+	#!/bin/bash - declare a start of a bash script in a file, [bash] can be replaced with different shell
+	var_name=... - declare a variable 
+	$var_name - call a variable
+	$([command_name]) - call a command
+	$1 - getting first parameter as value (user_group = $1)
+	read -p "please enter your password" var_name - reading user's input
+	$* - catch all passed params
+	$# - catch number of all passed params
+	$? - capture result returned from last command 
+
+	if [statement]
+	then
+	elif [statement]
+	then
+         break
+	else
+	fi
+
+	for var_name in $*
+	do
+	 ...
+	done
+
+	while true
+	 do
+	  ...
+	 done
+	
+	#File Test Operators (works only with file)
+	-b - checks if file is a block special file
+	-c - checks if file is a character special file
+	-d - checks if file is a directory
+	-f - checks if file is an ordinary file as opposed to a directory or special file
+	-g - checks if file has its set group ID bit set
+	-k - checks if file has its sticky bit set
+	-p - checks if file is a named pipe
+	-t - checks if file descriptor is open and associated with a terminal
+	-u - checks if file has its Set User ID bit set
+	-r - checks if file is readable
+	-w - checks if file is writable
+	-x - checks if file is executable
+	-s - checks if file has size greater than
+
+	#Relational Operators (works only with numeric values)
+	-rq - checks if value of two operands are equal
+	-ne - checks if value of two operands are not equal
+	-gt - checks if value of left operand is greater than
+	-lt - checks if value of left operand is less than
+	-ge - checks if value of left operand is greater or equal
+	-le - checks if value of left operand is less or equal
